@@ -1,0 +1,24 @@
+{
+  "principle_id": "PR-104",
+  "title": "이해 없는 저수준 조작은 복구 비용을 급격히 키울 수 있다",
+  "statement": "사용자가 원리를 이해하지 못한 상태에서 저수준 그래픽이나 런타임 설정을 건드리면 복구 비용이 급격히 커질 수 있다.",
+  "description": "로우레벨 옵션은 의미를 알고 다뤄야 한다.",
+  "source_session_ids": [
+    "Q3-PT-002"
+  ],
+  "applicability": "graphics, shader, runtime, vulkan 설정",
+  "anti_applicability": "스냅샷/백업/복구 절차가 명확한 실험 환경",
+  "signals": [
+    "셰이더",
+    "Vulkan",
+    "어두운 화면",
+    "복구 불가"
+  ],
+  "query_forms": [
+    "왜 건드릴수록 더 망하지",
+    "로우레벨 설정은 언제 건드려야 하지"
+  ],
+  "agent_implication": "사용자의 구조 이해가 없으면 로우레벨 조치를 늦춰야 한다.",
+  "confidence": 0.91,
+  "status": "draft"
+}

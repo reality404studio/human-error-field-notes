@@ -1,0 +1,22 @@
+{
+  "principle_id": "PR-207",
+  "title": "초기 구조 혼합으로 생긴 기술 부채는 나중에 UX 부채로 변환되어 나타날 수 있다",
+  "statement": "초기 구조 혼합으로 생긴 기술 부채는 나중에 UX 부채로 변환되어 나타날 수 있다.",
+  "description": "아키텍처 부채는 나중에 사용자 경험 비용으로 재청구된다.",
+  "source_session_ids": [
+    "Q3-SM-004"
+  ],
+  "applicability": "구조가 UX에 직접 연결되는 상호작용 시스템",
+  "anti_applicability": "UX와 구조가 거의 분리된 내부 배치 시스템",
+  "signals": [
+    "HUD 멀미",
+    "UX 재설계 필요"
+  ],
+  "query_forms": [
+    "왜 초기 설계 문제가 나중에 ux로 터지지",
+    "기술 부채가 ux 부채가 되나"
+  ],
+  "agent_implication": "구조 혼합 설계는 후속 UX 비용까지 경고해야 한다.",
+  "confidence": 0.92,
+  "status": "draft"
+}

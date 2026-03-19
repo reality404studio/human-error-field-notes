@@ -1,0 +1,22 @@
+{
+  "principle_id": "PR-204",
+  "title": "이해하지 못한 장문 절차를 그대로 수행하는 방식은 구현 성공률이 낮다",
+  "statement": "사용자가 이해하지 못한 절차를 길게 수행하는 방식은 구현 성공률이 낮다.",
+  "description": "절차량이 늘어날수록 의미 해석이 더 중요해진다.",
+  "source_session_ids": [
+    "Q3-SM-002"
+  ],
+  "applicability": "장문의 개발 지시 수행",
+  "anti_applicability": "각 단계의 목적과 실패 체크가 잘 정의된 경우",
+  "signals": [
+    "뜻 모르고 따라함",
+    "당연히 실패"
+  ],
+  "query_forms": [
+    "이해 못해도 일단 따라하면 되나",
+    "왜 길수록 더 실패하지"
+  ],
+  "agent_implication": "절차 진행 전 의미와 역할 설명을 먼저 제공해야 한다.",
+  "confidence": 0.91,
+  "status": "draft"
+}

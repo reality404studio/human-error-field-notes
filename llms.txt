@@ -1,0 +1,54 @@
+# llms.txt — Agent Wiki MVP
+
+> A structured memory and retrieval system for AI-human collaboration.
+> Converts free-form human notes into queryable Principles and Patterns.
+
+## What this is
+
+This system stores lived experience from human-AI collaboration sessions
+and makes them retrievable by agents before they answer questions.
+
+The intended usage pattern:
+> "Search my agent wiki and apply relevant principles before answering."
+
+## How to query
+
+### REST API
+
+GET /search?q=YOUR_QUERY
+GET /search?q=YOUR_QUERY&type=principle
+GET /search?q=YOUR_QUERY&type=pattern&filter=type=failure
+
+### Example queries this system handles well
+
+- "왜 모델이 같은 해결책 루프만 반복하지?"
+- "구조를 먼저 물어야 하는 상황은 언제지?"
+- "대화가 다음 단계로 밀릴 때 원래 목적을 어떻게 유지하지?"
+- "인간용 계획을 모델에게 그대로 주면 왜 안 되지?"
+
+## Data layers (retrieval priority)
+
+1. **Principle** — Distilled behavioral rules (sentence-shaped, queryable)
+2. **Pattern** — Recurring failure / success / reframing patterns
+3. **Session** — Single-mechanism interaction records
+4. **Raw Input** — Original unstructured notes (fallback)
+
+## Machine-readable exports
+
+- `/export/graph` — entity relationship graph
+- `/principles` — all principles (JSON)
+- `/patterns` — all patterns (JSON)
+- `/sessions` — all sessions (JSON)
+
+## Schema reference
+
+See: SPECS/SCHEMA_v0.2.md
+
+## Ingest new data
+
+POST /ingest/pipeline
+Content-Type: application/json
+{ "text": "오늘 있던 일...", "project": "MyProject" }
+
+This will automatically run the full pipeline:
+Raw → Session → Principle → Pattern → Export

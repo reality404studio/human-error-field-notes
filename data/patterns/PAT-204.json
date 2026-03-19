@@ -1,0 +1,28 @@
+{
+  "pattern_id": "PAT-204",
+  "name": "asking-why-the-steps-exist-reveals-the-system-model",
+  "type": "success",
+  "definition": "단계 수행보다 단계의 이유를 묻는 순간 구조 개념이 드러나는 패턴",
+  "triggers": [
+    "단계 수 과잉",
+    "구조 이해 욕구"
+  ],
+  "signals": [
+    "왜 있냐",
+    "무슨 역할이냐"
+  ],
+  "included_principle_ids": [
+    "PR-205",
+    "PR-206"
+  ],
+  "representative_session_ids": [
+    "Q3-SM-003"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-203"
+  ],
+  "agent_response": "장문 절차가 나오면 먼저 구조 모델과 상태 전이를 설명한다.",
+  "confidence": 0.95,
+  "stability": "provisional"
+}

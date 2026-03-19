@@ -1,0 +1,36 @@
+{
+  "session_id": "Q3-SM-003",
+  "title": "단계의 이유를 묻기 시작하자 상태머신 개념을 이해하게 된 사례",
+  "project": "Quest camera capture pipeline after passthrough stabilization",
+  "domain": "reframing / concept acquisition",
+  "phase": "reflection",
+  "outcome_type": "success",
+  "resolution_status": "resolved",
+  "raw_source_ids": [
+    "RAW-20260312-003"
+  ],
+  "summary": "사용자는 왜 단계가 많은지, 캡처 스테이션은 왜 있는지, 이 루프와 스크립트는 무슨 역할인지 묻기 시작했고, 그제서야 상태머신 개념이 설명되었다. 이를 통해 상태를 먼저 정의하고 그에 맞춰 기능을 짜야 한다는 개념을 이해했다.",
+  "context": "실패 후 단계 수와 구성 요소의 존재 이유를 질문하기 시작한 상황",
+  "surface_problem": "지시 단계가 너무 많고 각 요소의 이유를 모름",
+  "actual_problem": "사용자에게 상태 흐름 모델이 없어서 출력 구조를 해석할 수 없었음",
+  "trigger": "실패 후 단계 수와 구성 요소의 존재 이유를 질문함",
+  "human_state": "구조를 알고 싶어짐",
+  "questioning_pattern": "왜 이렇게 많냐, 왜 있냐, 무슨 역할이냐",
+  "agent_failure_mode": "초기에는 구조 설명 없이 절차를 내림",
+  "constraints": [
+    "state_model_missing"
+  ],
+  "observability_notes": "절차의 역할 질문이 개념 획득의 시작점이 됨",
+  "action_taken": "단계/루프/스크립트 역할을 질문",
+  "what_changed": "상태머신 개념 획득",
+  "result": "상태를 먼저 정의하고 기능을 짜야 한다는 프레임 획득",
+  "why_it_mattered": "단계의 이유를 묻는 것이 구조 개념을 학습하는 계기가 되었다",
+  "candidate_principles": [
+    "PR-205",
+    "PR-206"
+  ],
+  "candidate_patterns": [
+    "PAT-204"
+  ],
+  "confidence": 0.94
+}

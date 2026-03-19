@@ -1,0 +1,26 @@
+{
+  "pattern_id": "PAT-302",
+  "name": "premature-next-step-push",
+  "type": "meta-collaboration",
+  "definition": "모델이 현재 단계 검증보다 다음 단계 진행을 먼저 밀어붙이는 패턴",
+  "triggers": [
+    "출력 직후 다음 액션 제안"
+  ],
+  "signals": [
+    "검증 끝나기 전에 구현/추출 다음 단계로 이동"
+  ],
+  "included_principle_ids": [
+    "PR-301",
+    "PR-302"
+  ],
+  "representative_session_ids": [
+    "META-CHAT-001"
+  ],
+  "parent_pattern_id": "PAT-301",
+  "related_pattern_ids": [
+    "PAT-303"
+  ],
+  "agent_response": "다음 단계 제안 전에 현재 단계 완료 여부를 확인한다.",
+  "confidence": 0.92,
+  "stability": "provisional"
+}

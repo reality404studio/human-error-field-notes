@@ -1,0 +1,38 @@
+{
+  "session_id": "Q3-PT-002",
+  "title": "다른 방법 요구가 이해 없는 로우레벨 설정 변경으로 이어진 사례",
+  "project": "Quest passthrough integration debugging",
+  "domain": "XR / graphics runtime",
+  "phase": "debugging",
+  "outcome_type": "failure",
+  "resolution_status": "unresolved",
+  "raw_source_ids": [
+    "RAW-20260312-002"
+  ],
+  "summary": "같은 답변 루프를 끊고자 사용자가 다른 방법을 요구하자, 모델은 Vulkan, 셰이더, 옵션 설정 등 더 낮은 레벨의 변경을 제안했다. 사용자는 의미를 모른 채 수행했고 상태가 더 악화되었다.",
+  "context": "같은 답변 루프 탈출을 원하는 상황",
+  "surface_problem": "같은 답변 루프를 벗어나고 싶었음",
+  "actual_problem": "질문 프레임은 그대로인데 제안의 층위만 저수준으로 바뀌었을 뿐이었다",
+  "trigger": "다른 방법을 제시해보라고 요구함",
+  "human_state": "답답함, 조급함, 의미 없는 실행",
+  "questioning_pattern": "다른 방법 제시해봐",
+  "agent_failure_mode": "문제 프레임을 바꾸지 않고 조치 다양화만 수행함",
+  "constraints": [
+    "low_level_risk",
+    "user_lacks_model"
+  ],
+  "observability_notes": "변경의 의미를 이해하지 못한 상태에서 조치 수행",
+  "action_taken": "Vulkan, 셰이더, 옵션 설정 변경",
+  "what_changed": "화면이 더 어두워지고 상태가 복구 불가에 가까워짐",
+  "result": "환경 상태 악화",
+  "why_it_mattered": "해결책 다양화가 프레임 전환을 보장하지 않는다",
+  "candidate_principles": [
+    "PR-103",
+    "PR-104"
+  ],
+  "candidate_patterns": [
+    "PAT-102",
+    "PAT-103"
+  ],
+  "confidence": 0.88
+}

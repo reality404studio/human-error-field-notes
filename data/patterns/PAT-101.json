@@ -1,0 +1,29 @@
+{
+  "pattern_id": "PAT-101",
+  "name": "surface-symptom-loop",
+  "type": "failure",
+  "definition": "구조를 모른 채 증상 제거 요청만 반복하는 패턴",
+  "triggers": [
+    "증상 반복",
+    "시스템 모델 부재"
+  ],
+  "signals": [
+    "왜 안 됨",
+    "되게 만들어"
+  ],
+  "included_principle_ids": [
+    "PR-101",
+    "PR-102"
+  ],
+  "representative_session_ids": [
+    "Q3-PT-001"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-102",
+    "PAT-104"
+  ],
+  "agent_response": "구조를 먼저 물어보도록 유도한다.",
+  "confidence": 0.93,
+  "stability": "provisional"
+}

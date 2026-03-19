@@ -1,0 +1,29 @@
+{
+  "pattern_id": "PAT-102",
+  "name": "false-diversity-of-solutions",
+  "type": "failure",
+  "definition": "질문 프레임은 그대로인데 해결책만 겉으로 다양해지는 패턴",
+  "triggers": [
+    "다른 방법 요청"
+  ],
+  "signals": [
+    "SDK 전환",
+    "Vulkan",
+    "셰이더",
+    "옵션 변경"
+  ],
+  "included_principle_ids": [
+    "PR-103",
+    "PR-104"
+  ],
+  "representative_session_ids": [
+    "Q3-PT-002"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-101"
+  ],
+  "agent_response": "조치 다양화보다 프레임 전환 여부를 먼저 확인한다.",
+  "confidence": 0.9,
+  "stability": "provisional"
+}

@@ -1,0 +1,27 @@
+{
+  "pattern_id": "PAT-104",
+  "name": "mechanism-first-breakthrough",
+  "type": "reframing",
+  "definition": "고쳐줘에서 원리가 뭐냐로 질문이 바뀌는 순간 구조 이해가 시작되는 패턴",
+  "triggers": [
+    "해결 요청 실패 누적"
+  ],
+  "signals": [
+    "원리가 뭐야",
+    "구조가 뭐야"
+  ],
+  "included_principle_ids": [
+    "PR-105",
+    "PR-106"
+  ],
+  "representative_session_ids": [
+    "Q3-PT-003"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-101"
+  ],
+  "agent_response": "구조 질문이 없으면 먼저 시스템 모델 형성 질문을 제안한다.",
+  "confidence": 0.95,
+  "stability": "provisional"
+}

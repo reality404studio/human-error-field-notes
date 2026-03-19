@@ -1,0 +1,26 @@
+{
+  "pattern_id": "PAT-203",
+  "name": "procedural-overflow-without-structural-understanding",
+  "type": "failure",
+  "definition": "구조 이해 없이 절차만 과잉 생성되는 패턴",
+  "triggers": [
+    "사용자 이해 없는 장문 지시"
+  ],
+  "signals": [
+    "뜻 모르고 따라함",
+    "성공률 낮음"
+  ],
+  "included_principle_ids": [
+    "PR-204"
+  ],
+  "representative_session_ids": [
+    "Q3-SM-002"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-202"
+  ],
+  "agent_response": "절차 실행 전 각 단계의 역할과 목적을 설명한다.",
+  "confidence": 0.9,
+  "stability": "provisional"
+}

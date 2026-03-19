@@ -1,0 +1,22 @@
+{
+  "principle_id": "PR-203",
+  "title": "상태 정의와 기능 구현을 동시에 시작하면 절차 수는 급증하고 제어 가능성은 떨어질 수 있다",
+  "statement": "상태 정의와 기능 구현을 동시에 시작하면 절차 수는 급격히 늘지만 제어 가능성은 떨어질 수 있다.",
+  "description": "구조와 기능이 섞이면 출력 과잉이 생긴다.",
+  "source_session_ids": [
+    "Q3-SM-002"
+  ],
+  "applicability": "상태 기반 인터랙션 시스템 구현",
+  "anti_applicability": "상태가 거의 없는 단순 선형 기능 구현",
+  "signals": [
+    "70단계 출력",
+    "상태와 기능 혼합"
+  ],
+  "query_forms": [
+    "왜 단계가 이렇게 많아지지",
+    "상태랑 기능을 같이 짜면 왜 폭발하지"
+  ],
+  "agent_implication": "상태 설계와 기능 구현을 분리하라.",
+  "confidence": 0.94,
+  "status": "draft"
+}

@@ -1,0 +1,27 @@
+{
+  "pattern_id": "PAT-201",
+  "name": "human-readable-plan-is-not-model-executable",
+  "type": "failure",
+  "definition": "인간 설명용 계획을 모델 실행 계획으로 착각하는 패턴",
+  "triggers": [
+    "고수준 계획 그대로 위임"
+  ],
+  "signals": [
+    "큰 단계 몇 개만 존재",
+    "모델 출력 과잉"
+  ],
+  "included_principle_ids": [
+    "PR-201",
+    "PR-202"
+  ],
+  "representative_session_ids": [
+    "Q3-SM-001"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-202"
+  ],
+  "agent_response": "계획을 받으면 실행 단위로 재분해부터 수행한다.",
+  "confidence": 0.95,
+  "stability": "provisional"
+}

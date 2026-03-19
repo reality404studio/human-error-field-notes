@@ -1,0 +1,29 @@
+{
+  "pattern_id": "PAT-003",
+  "name": "local-debugging-on-structural-blocker",
+  "type": "failure",
+  "definition": "상위 구조 제약이 원인인데 하위 구현 루프를 반복하는 패턴",
+  "triggers": [
+    "검은 화면",
+    "경로 확인",
+    "루프 확인 반복"
+  ],
+  "signals": [
+    "로컬 디버깅 과잉",
+    "정책 제약 미확인"
+  ],
+  "included_principle_ids": [
+    "PR-002",
+    "PR-003"
+  ],
+  "representative_session_ids": [
+    "Q3-CAM-001"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-001"
+  ],
+  "agent_response": "로컬 수정 전에 정책/권한/아키텍처 제약을 확인한다.",
+  "confidence": 0.86,
+  "stability": "provisional"
+}

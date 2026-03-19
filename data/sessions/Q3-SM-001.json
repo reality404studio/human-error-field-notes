@@ -1,0 +1,37 @@
+{
+  "session_id": "Q3-SM-001",
+  "title": "인간용 개발 플랜을 모델에게 그대로 넘겨 큰 개발 단위로 해석되게 만든 사례",
+  "project": "Quest camera capture pipeline after passthrough stabilization",
+  "domain": "planning / model handoff",
+  "phase": "planning",
+  "outcome_type": "failure",
+  "resolution_status": "resolved",
+  "raw_source_ids": [
+    "RAW-20260312-003"
+  ],
+  "summary": "사용자는 패스스루 성공 후 언어모델이 만든 개발 플랜을 코덱스에 그대로 제시하며 다음 개발을 요청했다. 하지만 그 플랜은 인간이 이해하기 위한 고수준 단계였고 모델 실행 단위로는 너무 컸다. 그 결과 모델은 카메라 촬영 기능과 사용자 상태 흐름을 동시에 설계하기 시작했다.",
+  "context": "패스스루 성공 직후 개발 플랜을 코덱스에 그대로 전달한 상황",
+  "surface_problem": "코덱스 출력 단계가 지나치게 많고 복잡함",
+  "actual_problem": "개발 플랜의 단위가 모델 실행용이 아니라 인간 이해용이었고, 실행 가능한 단위로 재분해되지 않았다",
+  "trigger": "고수준 개발 플랜을 그대로 실행 위임함",
+  "human_state": "나름 구조를 생각했지만 모델 최적화 관점은 부족한 상태",
+  "questioning_pattern": "이 다음을 개발해줘",
+  "agent_failure_mode": "비어 있는 구조를 메우기 위해 상태 흐름과 기능 설계를 동시에 생성함",
+  "constraints": [
+    "plan_granularity",
+    "model_handoff"
+  ],
+  "observability_notes": "초기에는 출력 길이만 보이고 왜 그런지 구조 해석이 없었음",
+  "action_taken": "고수준 계획을 코덱스에 그대로 전달",
+  "what_changed": "복잡한 출력이 상태머신+기능 동시 생성의 결과라는 점을 뒤늦게 이해함",
+  "result": "고수준 계획은 인간용과 모델용이 다르다는 교훈 획득",
+  "why_it_mattered": "계획 단위가 잘못되면 모델이 숨은 구조를 함께 생성하며 복잡성이 급증한다",
+  "candidate_principles": [
+    "PR-201",
+    "PR-202"
+  ],
+  "candidate_patterns": [
+    "PAT-201"
+  ],
+  "confidence": 0.92
+}

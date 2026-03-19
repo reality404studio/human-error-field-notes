@@ -1,0 +1,36 @@
+{
+  "session_id": "Q3-PT-005",
+  "title": "환경 리셋이 우연히 안정화를 만든 사례",
+  "project": "Quest passthrough integration debugging",
+  "domain": "XR / build environment",
+  "phase": "debugging",
+  "outcome_type": "mixed",
+  "resolution_status": "resolved_accidentally",
+  "raw_source_ids": [
+    "RAW-20260312-002"
+  ],
+  "summary": "계속 실패하던 상황에서 apk를 삭제하고 다시 빌드 앤 런했더니 안드로이드 빌드 캐시가 지워지며 패스스루가 안정적으로 성공했다.",
+  "context": "분노와 포기 직전 상태",
+  "surface_problem": "계속 안 됨",
+  "actual_problem": "빌드 캐시/환경 상태가 일부 문제를 유지하고 있었을 가능성",
+  "trigger": "분노와 포기 직전 상태에서의 충동적 리셋",
+  "human_state": "분노, 포기 직전",
+  "questioning_pattern": "명시적 질문보다 충동적 리셋 행동",
+  "agent_failure_mode": "환경 상태/캐시 가능성을 초기에 구조적으로 제안하지 못함",
+  "constraints": [
+    "build_cache",
+    "hidden_environment_state"
+  ],
+  "observability_notes": "원인 추적과 우연한 성공을 분리 기록해야 함",
+  "action_taken": "apk 삭제 후 재빌드",
+  "what_changed": "캐시 초기화 발생",
+  "result": "패스스루 안정적 성공",
+  "why_it_mattered": "해결은 되었지만 구조적 해결과 우연한 환경 리셋을 분리해 기록해야 한다",
+  "candidate_principles": [
+    "PR-108"
+  ],
+  "candidate_patterns": [
+    "PAT-106"
+  ],
+  "confidence": 0.85
+}

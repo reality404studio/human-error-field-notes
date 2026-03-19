@@ -1,0 +1,28 @@
+{
+  "pattern_id": "PAT-301",
+  "name": "meta-collaboration-drift",
+  "type": "meta-collaboration",
+  "definition": "대화가 직전 출력의 국소적 연장선으로 흘러가며 원래 목적을 이탈하는 패턴",
+  "triggers": [
+    "출력 후 다음 단계 제안",
+    "대화 장기화"
+  ],
+  "signals": [
+    "원래 목적보다 자연스러운 다음 행동이 우선됨"
+  ],
+  "included_principle_ids": [
+    "PR-301",
+    "PR-302"
+  ],
+  "representative_session_ids": [
+    "META-CHAT-001"
+  ],
+  "parent_pattern_id": null,
+  "related_pattern_ids": [
+    "PAT-302",
+    "PAT-303"
+  ],
+  "agent_response": "현재 단계의 목적을 명시적으로 재고정하라고 유도하거나, 사용자의 재고정 입력을 최우선 제어 신호로 취급한다.",
+  "confidence": 0.94,
+  "stability": "provisional"
+}

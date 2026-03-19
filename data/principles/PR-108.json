@@ -1,0 +1,22 @@
+{
+  "principle_id": "PR-108",
+  "title": "해결되었다고 해서 이해한 것은 아니다",
+  "statement": "문제 해결 후에도 구조적 해결과 환경 리셋에 의한 우연한 성공을 분리 기록해야 한다.",
+  "description": "성공과 설명 가능성은 다를 수 있다.",
+  "source_session_ids": [
+    "Q3-PT-005"
+  ],
+  "applicability": "캐시, 환경 상태, 리셋 후 우연한 안정화",
+  "anti_applicability": "원인 검증이 이미 끝난 명시적 수정 성공",
+  "signals": [
+    "삭제 후 재빌드",
+    "갑자기 안정화"
+  ],
+  "query_forms": [
+    "왜 지웠다 깔았더니 됐지",
+    "이게 진짜 해결인가"
+  ],
+  "agent_implication": "리셋 기반 성공은 설명 불충분 상태로 따로 표시해야 한다.",
+  "confidence": 0.88,
+  "status": "draft"
+}

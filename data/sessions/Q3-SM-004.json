@@ -1,0 +1,38 @@
+{
+  "session_id": "Q3-SM-004",
+  "title": "초기 구조 혼합이 나중에 HUD 멀미 문제와 UX 재설계로 이어진 사례",
+  "project": "Quest camera capture pipeline after passthrough stabilization",
+  "domain": "architecture debt / UX debt",
+  "phase": "implementation",
+  "outcome_type": "mixed",
+  "resolution_status": "ongoing",
+  "raw_source_ids": [
+    "RAW-20260312-003"
+  ],
+  "summary": "초기 상태머신과 기능 구현의 혼합 설계는 뒤에 촬영 가이드를 HUD 형태로 구현하는 결과로 이어졌고, 사용자는 멀미를 경험하며 새로운 UX를 다시 설계해야 했다. 다만 상태머신 정의와 카메라 촬영 자체는 안정화되었다.",
+  "context": "초기 혼합 설계의 후속 구현 결과",
+  "surface_problem": "HUD 형태 촬영 가이드가 불편하고 멀미를 유발함",
+  "actual_problem": "초기 설계에서 상태 흐름과 기능이 섞인 기술 부채가 UX 부채로 전이됨",
+  "trigger": "초기 혼합 설계의 후속 구현 결과",
+  "human_state": "기능은 돌아가지만 UX는 망가진 상태를 경험함",
+  "questioning_pattern": "다음 단계 구현 중 뒤늦게 부채를 인지함",
+  "agent_failure_mode": "초기 설계 부채가 이후 UX 비용으로 번질 가능성을 전혀 경고하지 못함",
+  "constraints": [
+    "architecture_debt",
+    "ux_debt"
+  ],
+  "observability_notes": "기능 안정성과 UX 실패를 분리 기록해야 함",
+  "action_taken": "HUD 가이드 구현 후 UX 재설계 필요 인식",
+  "what_changed": "구조 부채가 UX 부채로 전이됨을 이해함",
+  "result": "상태머신 정의와 카메라 촬영은 안정화, UX는 재설계 필요",
+  "why_it_mattered": "초기 구조 혼합은 나중에 사용자 경험 비용으로 돌아온다",
+  "candidate_principles": [
+    "PR-207",
+    "PR-208"
+  ],
+  "candidate_patterns": [
+    "PAT-205",
+    "PAT-206"
+  ],
+  "confidence": 0.89
+}
