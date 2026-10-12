@@ -13,6 +13,11 @@ Endpoints:
 
 Run:
     uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+Browser callers must send an Origin listed in ALLOWED_ORIGINS
+(comma-separated). When that variable is unset, only local dev origins
+are allowed. This repo has no frontend or deploy config, so no production
+origin is hardcoded.
 """
 
 from __future__ import annotations
@@ -52,9 +57,48 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+# Local dev servers only. localhost and 127.0.0.1 are different origins.
+# No production frontend origin is recorded in this repo.
+_DEFAULT_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+
+def parse_allowed_origins(raw: str | None) -> list[str]:
+    """Parse a comma-separated origin allowlist.
+
+    Blank input returns the local dev defaults. ``*`` is dropped so a
+    wildcard can never be configured, including together with credentials.
+    """
+    if raw is None or not str(raw).strip():
+        return list(_DEFAULT_ALLOWED_ORIGINS)
+
+    origins: list[str] = []
+    for part in str(raw).split(","):
+        origin = part.strip().rstrip("/")
+        if not origin or origin == "*":
+            continue
+        if origin not in origins:
+            origins.append(origin)
+    return origins or list(_DEFAULT_ALLOWED_ORIGINS)
+
+
+_raw_origins = os.environ.get("ALLOWED_ORIGINS")
+if _raw_origins and any(part.strip() == "*" for part in _raw_origins.split(",")):
+    print(
+        "[api] ALLOWED_ORIGINS contains '*', which is ignored. "
+        "Set explicit origins such as https://your-frontend.example.",
+        file=sys.stderr,
+    )
+_allowed_origins = parse_allowed_origins(_raw_origins)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_allowed_origins,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
