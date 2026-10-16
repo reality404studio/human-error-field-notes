@@ -45,22 +45,15 @@ python scripts/query.py --type principle --query "검색어"
 uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-`scripts/`의 CLI는 브라우저를 거치지 않으므로 CORS와 무관하게 동작합니다. 브라우저에서 다른 주소의 페이지가 이 API를 부를 때만 아래 허용 목록이 적용됩니다.
+`scripts/`의 CLI는 브라우저를 거치지 않으므로 그대로 동작합니다.
 
-호스트(서버) 환경 변수 **`ALLOWED_ORIGINS`** 에 프론트 주소를 쉼표로 구분해 넣습니다. 스키마, 호스트, 포트만 쓰고 경로는 빼세요.
-
-```bash
-ALLOWED_ORIGINS=https://your-frontend.example,http://localhost:5173
-```
-
-값을 비우면 로컬 개발 주소만 허용합니다.
+브라우저는 로컬 주소에서만 이 API를 부를 수 있습니다. 포트는 제한하지 않습니다.
 
 - `http://localhost:3000`
-- `http://127.0.0.1:3000`
-- `http://localhost:5173`
 - `http://127.0.0.1:5173`
+- `https://[::1]:8080`
 
-이 저장소에는 프론트 설정, 배포 파일, 운영 프론트 주소가 없습니다. 운영 프론트를 붙이는 호스트에서는 `ALLOWED_ORIGINS`에 그 주소를 넣으세요. `*` 는 무시되고, 쿠키를 주고받는 CORS는 꺼져 있습니다. 예시는 `.env.example`을 보세요.
+`localhost`, `127.0.0.1`, `[::1]` 만 허용합니다. `http`와 `https` 모두 됩니다. 그 외 주소와 `*` 는 막습니다. 쿠키를 주고받는 CORS는 꺼져 있습니다. 호스트에 origin 환경 변수를 넣지 않아도 됩니다.
 
 ## 디렉토리 구조
 

@@ -14,15 +14,14 @@ Endpoints:
 Run:
     uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
-Browser callers must send an Origin listed in ALLOWED_ORIGINS
-(comma-separated). When that variable is unset, only local dev origins
-are allowed. This repo has no frontend or deploy config, so no production
-origin is hardcoded.
+Browsers may call this API only from a local origin: localhost,
+127.0.0.1, or [::1], on any port. Remote origins are refused.
 """
 
 from __future__ import annotations
 
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -57,47 +56,21 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
-# Local dev servers only. localhost and 127.0.0.1 are different origins.
-# No production frontend origin is recorded in this repo.
-_DEFAULT_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+# Browsers set Origin themselves, so a remote site cannot claim to be local.
+# Any port is accepted. http://localhost and http://127.0.0.1 are different origins.
+_LOCAL_ORIGIN_PATTERN = r"https?://(?:localhost|127\.0\.0\.1|\[::1\])(?::\d{1,5})?"
+_LOCAL_ORIGIN_RE = re.compile(_LOCAL_ORIGIN_PATTERN)
 
 
-def parse_allowed_origins(raw: str | None) -> list[str]:
-    """Parse a comma-separated origin allowlist.
+def is_local_origin(origin: str) -> bool:
+    """True for http(s) origins on localhost, 127.0.0.1, or [::1]."""
+    return _LOCAL_ORIGIN_RE.fullmatch(origin) is not None
 
-    Blank input returns the local dev defaults. ``*`` is dropped so a
-    wildcard can never be configured, including together with credentials.
-    """
-    if raw is None or not str(raw).strip():
-        return list(_DEFAULT_ALLOWED_ORIGINS)
-
-    origins: list[str] = []
-    for part in str(raw).split(","):
-        origin = part.strip().rstrip("/")
-        if not origin or origin == "*":
-            continue
-        if origin not in origins:
-            origins.append(origin)
-    return origins or list(_DEFAULT_ALLOWED_ORIGINS)
-
-
-_raw_origins = os.environ.get("ALLOWED_ORIGINS")
-if _raw_origins and any(part.strip() == "*" for part in _raw_origins.split(",")):
-    print(
-        "[api] ALLOWED_ORIGINS contains '*', which is ignored. "
-        "Set explicit origins such as https://your-frontend.example.",
-        file=sys.stderr,
-    )
-_allowed_origins = parse_allowed_origins(_raw_origins)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_allowed_origins,
+    allow_origins=[],
+    allow_origin_regex=_LOCAL_ORIGIN_PATTERN,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
